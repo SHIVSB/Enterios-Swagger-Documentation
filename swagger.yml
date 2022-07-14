@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  description: Backend server docs for Enterios-Serverless
+  version: "1.0.0"
+  title: Enterios-Serverless
+servers:
+  - description: Dev Server
+    url: http://localhost:5000/
+  # - description: Prod Server
+  #   url: "yet to be published"
+
+paths:
+  /:
+    get:
+      tags:
+        - homepage
+      summary: Get homepage of website
+      responses:
+        "200":
+          description: homepage content
+          content:
+            application/json:
+              schema:
+                $ref: ""
+  /signup:
+    post:
+      tags:
+        - user/customer signup
+      summary: Create user/customer account
+      operationId: customerSignup
+      requestBody:
+        $ref: "#/components/requestBodies/createCustomerInput"
+      responses:
+        "200":
+          description: Customer added/created successfully
+        "400":
+          description: Invalid input/ Empty Body
+        "500":
+          description: Internal server error
+
+components:
+  schemas:
+    createCustomerInput:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+  requestBodies:
+    createCustomerInput:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/createCustomerInput"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/createCustomerInput"
+      description: Customer sign up properties
+      required: true
