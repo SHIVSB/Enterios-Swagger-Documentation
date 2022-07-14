@@ -33,19 +33,20 @@ const app: Application = express();
 app.use(logger("dev"));
 app.use(cors({ origin: '*'}));
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.get("/", (req: Request, res: Response) => {
-  res
-    .status(200)
-    .send(
-      "This is the Enterios-Severless Swagger documentation server. Happy Hacking!"
-    );
-});
+// app.get("/", (req: Request, res: Response) => {
+//   res
+//     .status(200)
+//     .send(
+//       "This is the Enterios-Severless Swagger documentation server. Happy Hacking!"
+//     );
+// });
 
 app.listen(PORT, () => {
   console.log(
     "This is the Enterios-Severless Swagger documentation server. Happy Hacking!"
   );
+  
   console.log(`Server running on port : ${PORT}`);
 });
