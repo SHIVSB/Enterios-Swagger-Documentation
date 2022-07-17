@@ -10,18 +10,7 @@ servers:
   #   url: "yet to be published"
 
 paths:
-  /:
-    get:
-      tags:
-        - homepage
-      summary: Get homepage of website
-      responses:
-        "200":
-          description: homepage content
-          content:
-            application/json:
-              schema:
-                $ref: ""
+
   /signup:
     post:
       tags:
@@ -388,13 +377,13 @@ components:
 
     cancelProjectInput:
       type: object
-      propertieS:
+      properties:
         projectId:
           type: string
 
     createProjectInput:
       type: object
-      propertieS:
+      properties:
         projectCity:
           type: string
         projectArea:
