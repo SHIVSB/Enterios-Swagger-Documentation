@@ -3,7 +3,7 @@ import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import logger from "morgan";
 import cors from "cors";
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 const options = {
   definition: {
@@ -17,10 +17,10 @@ const options = {
         url: "http://localhost:7071/api/",
         description: "Development server",
       },
-      // {
-      //   url: "yet to be published",
-      //   description: "Production Server",
-      // },
+      {
+        url: "https://enterios.azurewebsites.net/api/",
+        description: "Production Server",
+      },
     ],
   },
   apis: ["swagger.yml"],

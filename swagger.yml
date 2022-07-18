@@ -6,8 +6,8 @@ info:
 servers:
   - description: Dev Server
     url: http://localhost:7071/api/
-  # - description: Prod Server
-  #   url: "yet to be published"
+  - description: Prod Server
+    url: "https://enterios.azurewebsites.net/api/"
 
 paths:
 
