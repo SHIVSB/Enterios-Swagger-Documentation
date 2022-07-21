@@ -31,7 +31,7 @@ const swaggerSpec = swaggerJSDoc(options);
 const app: Application = express();
 
 app.use(logger("dev"));
-app.use(cors({ origin: '*'}));
+app.use(cors({ origin: "*" }));
 
 app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
@@ -47,6 +47,6 @@ app.listen(PORT, () => {
   console.log(
     "This is the Enterios-Severless Swagger documentation server. Happy Hacking!"
   );
-  
+
   console.log(`Server running on port : ${PORT}`);
 });
