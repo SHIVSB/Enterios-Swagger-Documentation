@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
-  description: Backend server docs for Enterios-Serverless
+  description: Backend server documentation for Enterios-Serverless
   version: "1.0.0"
   title: Enterios-Serverless
 servers:
-  - description: Dev Server
+  - description: Development Server
     url: http://localhost:7071/api/
-  - description: Prod Server
+  - description: Production Server
     url: "https://enterios.azurewebsites.net/api/"
 
 paths:
